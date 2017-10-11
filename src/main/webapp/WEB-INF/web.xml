@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<web-app version="3.1" 
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+	  http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+  	<display-name>Archetype Created Web Application</display-name>
+  	<!--  spring的框架核心监听器 -->
+ 	<listener>
+ 	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+ 	</listener>
+ 	<context-param>
+ 	<param-name>contextConfigLocation</param-name>
+	 <param-value>classpath:applicationContext.xml</param-value>
+ 	</context-param>
+	<!-- 感觉可有可无，没有我还是显示正确 -->
+<!-- 	<filter>
+	<filter-name>OpenSessionInViewFilter</filter-name>
+	<filter-class>org.springframework.orm.hibername3.support.OpenSessionInView</filter-class>
+	</filter>
+	<filter-mapping>
+	<filter-name>OpenSessionInViewFilter</filter-name>
+	<url-pattern>*.action</url-pattern>
+	</filter-mapping> -->
+	
+	
+	
+	 <!-- struts2框架的核心过滤器的配置 -->
+	 <filter>
+	 <filter-name>struts</filter-name>
+	 <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	 </filter>
+	 <filter-mapping>
+	 <filter-name>struts</filter-name>
+	 <url-pattern>/*</url-pattern>
+	 </filter-mapping>
+</web-app>

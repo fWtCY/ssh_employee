@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+ "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="ssh" namespace="/" extends="struts-default">
+		<action name="employee_*" class="employeeAction" method="{1}">
+			<result name="input">/index.jsp</result>
+			<result name="success">/frame.jsp</result>
+			<result name="findAll">/jsp/employee/list.jsp</result>
+			<result name="edit">/jsp/employee/editEmployee.jsp</result>
+			<result name="addUI">/jsp/employee/addEmployee.jsp</result>
+			<result name="add" type="redirectAction">employee_findAll.action</result>
+			<result name="delect">employee_delect.action</result>
+		</action>
+		<action name="department_*" class="departmentAction" method="{1}">
+			<result name="findAll">/jsp/department/list.jsp</result>
+			<result name="addUI">/jsp/department/addDepartment.jsp</result>
+			<result name="add" type="redirectAction">department_findAll.action</result>
+			<result name="edit">/jsp/department/editDepartment.jsp</result>
+			<result name="update" type="redirectAction">department_findAll.action</result>
+			<result name="delete" type="redirectAction">department_findAll.action</result>
+		</action>
+		
+	</package>
+</struts>
+

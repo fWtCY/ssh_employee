@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-9-20 15:23:42 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.fwt.domain.Employee" table="EMPLOYEE">
+        <id name="eid" type="java.lang.Integer">
+            <column name="EID" />
+            <generator class="increment" />
+        </id>
+        <property name="ename" type="java.lang.String">
+            <column name="ENAME" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        <property name="birthday" type="java.util.Date">
+            <column name="BIRTHDAY" />
+        </property>
+        <property name="joinDate" type="java.util.Date">
+            <column name="JOINDATE" />
+        </property>
+        <property name="eno" type="java.lang.String">
+            <column name="ENO" />
+        </property>
+        <property name="username" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <many-to-one name="department" class="com.fwt.domain.Department" fetch="join">
+            <column name="DEPARTMENT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
